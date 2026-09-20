@@ -65,16 +65,35 @@
 // }
 // doSomething(Directions.up);
 // doSomething(Directions.left);
-enum ResponseStatus{
-    Success = 200,
-    Error = 500,
-    NotFound = 404
-}
 
-app.get('/',(req,res)=>{
-    if(!req.query.username){
-        res.status(ResponseStatus.NotFound).json({})
-    } else {
-        res.status(ResponseStatus.Success).json({})
-    }
-})
+
+// enum ResponseStatus{
+//     Success = 200,
+//     Error = 500,
+//     NotFound = 404
+// }
+
+// app.get('/',(req,res)=>{
+//     if(!req.query.username){
+//         res.status(ResponseStatus.NotFound).json({})
+//     } else {
+//         res.status(ResponseStatus.Success).json({})
+//     }
+// })
+
+// Generics:
+
+// Problem:
+// type Input = string | number        //Can be solved by string[] | number[]
+
+// function doSomething(arg:Input[]){
+//     return arg
+// }
+
+// console.log(doSomething([1,2,"asf"])) //Totally possible, but this creates issue
+
+// function doSomething<T>(args:T){
+//     return args
+// }
+// doSomething<string>('asdf');
+// doSomething<number>(22);
