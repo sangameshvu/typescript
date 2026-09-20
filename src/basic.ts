@@ -33,12 +33,48 @@
 // let result: number = runAnotherFun(fn)
 // console.log(result);
 
-interface User {
-    name : string,
-    email? : string, //optional
-    age : number
+// interface User {
+//     name : string,
+//     email? : string, //optional
+//     age : number
+// }
+
+// function isLegal(user : User) : boolean {
+//     return user.age > 18
+// }
+
+// enms
+
+// type directions = 'up' | 'down' | 'right' | 'left'
+
+// function doSomething(keyPressed : directions) {
+//     console.log(keyPressed)
+// }
+
+// doSomething('up')
+// doSomething('sdf') //Not part of directions, so compile time error.
+
+// enum Directions  {
+//     up,
+//     down,
+//     left,
+//     right
+// }
+// function doSomething(keyPressed: Directions){
+//     console.log(keyPressed)
+// }
+// doSomething(Directions.up);
+// doSomething(Directions.left);
+enum ResponseStatus{
+    Success = 200,
+    Error = 500,
+    NotFound = 404
 }
 
-function isLegal(user : User) : boolean {
-    return user.age > 18
-}
+app.get('/',(req,res)=>{
+    if(!req.query.username){
+        res.status(ResponseStatus.NotFound).json({})
+    } else {
+        res.status(ResponseStatus.Success).json({})
+    }
+})
