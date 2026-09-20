@@ -97,3 +97,9 @@
 // }
 // doSomething<string>('asdf');
 // doSomething<number>(22);
+
+function doSomething<T>(args:T[]){
+    return args
+}
+doSomething<string>(['sdgg','ergtg']);
+doSomething([1,2,3,4]) // eevn if not specified its not a problem
